@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart' ;
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -29,15 +26,15 @@ class HomePage extends StatelessWidget{
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              title: Text('')
+              label: ''
             ),
           BottomNavigationBarItem(
                 icon: Icon(Icons.favorite),
-                title: Text('')
+                label: ''
             ),
           BottomNavigationBarItem(
                 icon: Icon(Icons.notifications),
-                title: Text('')
+                label: ''
             ),
         ],
       ),
