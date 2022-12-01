@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart' ;
+import 'package:flutter_tdd/util/coffee_tile.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -48,9 +49,10 @@ class HomePage extends StatelessWidget{
           ),
 
           // search bar
-          this.getSearchField()
+          this.getSearchField(),
 
           // list of propositions
+          this.getCoffeeTiles(),
         ],
       )
     );
@@ -92,4 +94,21 @@ class HomePage extends StatelessWidget{
       ),
     );
   }
+
+
+
+
+  Widget getCoffeeTiles(){
+    return Expanded(
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+            CoffeeTile()
+          ],
+        )
+    );
+  }
+
+
+
 }
