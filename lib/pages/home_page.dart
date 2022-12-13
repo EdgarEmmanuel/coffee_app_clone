@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' ;
 import 'package:flutter_tdd/util/coffee_tile.dart';
+import 'package:flutter_tdd/util/coffee_type_name.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -50,6 +51,9 @@ class HomePage extends StatelessWidget{
 
           // search bar
           this.getSearchField(),
+
+          // differents coffee tiles
+          this.getCoffeeTilesList(),
 
           // list of propositions
           this.getCoffeeTiles(),
@@ -106,6 +110,22 @@ class HomePage extends StatelessWidget{
             CoffeeTile()
           ],
         )
+    );
+  }
+
+
+  Widget getCoffeeTilesList(){
+    return Container(
+      padding: EdgeInsets.all(5.0),
+      height: 50,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: [
+          CoffeeType(name: "Cappucino"),
+          CoffeeType(name: "Latte"),
+          CoffeeType(name: "Espresso"),
+        ],
+      ),
     );
   }
 
