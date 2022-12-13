@@ -19,12 +19,14 @@ class CoffeeTile extends StatelessWidget{
           children: [
 
             // image
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12.0),
-              child: Image.network(
-                "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60",
-                height: 200,
-                alignment: Alignment.center,
+              Center(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12.0),
+                child: Image.network(
+                  "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60",
+                  height: 100,
+                  alignment: Alignment.center,
+                ),
               ),
             ),
 
@@ -70,7 +72,7 @@ class CoffeeTile extends StatelessWidget{
 
                 ],
               ),
-            )
+            ),
 
 
 
