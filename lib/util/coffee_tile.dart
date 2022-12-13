@@ -3,6 +3,19 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 class CoffeeTile extends StatelessWidget{
+  final String imagePath;
+  final String coffeeName;
+  final String coffeeDescription;
+  final double coffeePrice;
+
+  const CoffeeTile({
+    @required this.imagePath,
+    @required this.coffeeName,
+    @required this.coffeeDescription,
+    @required this.coffeePrice
+  });
+
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,7 +36,7 @@ class CoffeeTile extends StatelessWidget{
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12.0),
                 child: Image.network(
-                  "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60",
+                  "${this.imagePath}",
                   height: 200,
                   alignment: Alignment.center,
                 ),
@@ -38,7 +51,7 @@ class CoffeeTile extends StatelessWidget{
                 children: [
                   // title of the coffee
                   Text(
-                    "Cappucino",
+                    "${this.coffeeName}",
                     style: GoogleFonts.bebasNeue(
                         textStyle: TextStyle(
                             fontSize: 20,
@@ -51,7 +64,7 @@ class CoffeeTile extends StatelessWidget{
 
                   // description of the coffee
                   Text(
-                    "With dark milk",
+                    "${this.coffeeDescription}",
                     style: GoogleFonts.adamina(
                         textStyle: TextStyle(
                             color: Colors.grey[700],
@@ -70,7 +83,7 @@ class CoffeeTile extends StatelessWidget{
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                    Text("\$4.00"),
+                    Text("\$${this.coffeePrice}"),
                   Container(
                       decoration: BoxDecoration(
                         color: Colors.orange,

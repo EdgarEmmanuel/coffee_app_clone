@@ -110,16 +110,39 @@ class _HomePage extends State<HomePage>{
 
 
 
+
+  final List coffeeTiles = [
+    [
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60",
+      "Cappucino",
+      "With dark milk",
+      4.00
+    ]
+  ];
+
+
+
   Widget getCoffeeTiles(){
     return Expanded(
-        child: ListView(
+        child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          children: [
-            CoffeeTile()
-          ],
+          itemCount: coffeeTiles.length,
+          itemBuilder: (context, index){
+            return CoffeeTile(
+              imagePath: coffeeTiles[index][0],
+              coffeeName: coffeeTiles[index][1],
+              coffeeDescription: coffeeTiles[index][2],
+              coffeePrice: coffeeTiles[index][3],
+            );
+          },
         )
     );
   }
+
+
+
+
+
 
 
   final List coffeeTilesName = [
@@ -164,12 +187,6 @@ class _HomePage extends State<HomePage>{
         scrollDirection: Axis.horizontal,
       ),
     );
-  }
-
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
   }
 
 
