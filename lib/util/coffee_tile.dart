@@ -19,7 +19,7 @@ class CoffeeTile extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 10.0, bottom: 5.0),
+      padding: EdgeInsets.only(left: 20.0, bottom: 5.0),
       child: Container(
         padding: EdgeInsets.all(12.0),
         width: 150,
