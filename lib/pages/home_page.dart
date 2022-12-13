@@ -121,9 +121,9 @@ class HomePage extends StatelessWidget{
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
-          CoffeeType(name: "Cappucino"),
-          CoffeeType(name: "Latte"),
-          CoffeeType(name: "Espresso"),
+          CoffeeType(name: "Cappucino", isSelected: true),
+          CoffeeType(name: "Latte",),
+          CoffeeType(name: "Espresso",),
         ],
       ),
     );
