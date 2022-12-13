@@ -3,8 +3,16 @@ import 'package:flutter_tdd/util/coffee_tile.dart';
 import 'package:flutter_tdd/util/coffee_type_name.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+class HomePage extends StatefulWidget{
+  @override
+  State<HomePage> createState() {
+    return _HomePage() ;
+  }
 
-class HomePage extends StatelessWidget{
+}
+
+
+class _HomePage extends State<HomePage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,19 +122,50 @@ class HomePage extends StatelessWidget{
   }
 
 
+  final List coffeeTilesName = [
+    [
+      "Cappucino",
+      true
+    ],
+    [
+      "Latte",
+      false
+    ],
+    [
+      "Espresso",
+      false
+    ],
+  ];
+
+  changeSelectedCoffeeType(int index){
+    setState(() {
+      coffeeTilesName.forEach((e) => e[1] = false);
+      coffeeTilesName[index][1] = !coffeeTilesName[index][1];
+    });
+  }
+
   Widget getCoffeeTilesList(){
     return Container(
       padding: EdgeInsets.all(5.0),
       height: 50,
-      child: ListView(
+      child: ListView.builder(
+        itemCount: coffeeTilesName.length ,
+        itemBuilder: (context, index) {
+          return CoffeeType(
+              name: coffeeTilesName[index][0],
+              isSelected: coffeeTilesName[index][1],
+              onTap: () => changeSelectedCoffeeType(index)
+          );
+        },
         scrollDirection: Axis.horizontal,
-        children: [
-          CoffeeType(name: "Cappucino", isSelected: true),
-          CoffeeType(name: "Latte",),
-          CoffeeType(name: "Espresso",),
-        ],
       ),
     );
+  }
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 
 
