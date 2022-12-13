@@ -68,8 +68,10 @@ class CoffeeTile extends StatelessWidget{
             Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-
+                    Text("\$4.00"),
+                  Icon(Icons.add)
                 ],
               ),
             ),
