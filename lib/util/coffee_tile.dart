@@ -6,7 +6,7 @@ class CoffeeTile extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 10.0, bottom: 25.0),
+      padding: EdgeInsets.only(left: 10.0, bottom: 5.0),
       child: Container(
         padding: EdgeInsets.all(12.0),
         width: 150,
@@ -24,7 +24,7 @@ class CoffeeTile extends StatelessWidget{
                 borderRadius: BorderRadius.circular(12.0),
                 child: Image.network(
                   "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60",
-                  height: 100,
+                  height: 200,
                   alignment: Alignment.center,
                 ),
               ),
@@ -71,7 +71,14 @@ class CoffeeTile extends StatelessWidget{
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                     Text("\$4.00"),
-                  Icon(Icons.add)
+                  Container(
+                      decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(4.0),
+                      ),
+                      child: Icon(Icons.add),
+
+                  ),
                 ],
               ),
             ),
