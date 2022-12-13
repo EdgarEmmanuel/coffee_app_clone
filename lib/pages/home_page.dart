@@ -135,6 +135,10 @@ class _HomePage extends State<HomePage>{
       "Espresso",
       false
     ],
+    [
+      "Tea",
+      false
+    ],
   ];
 
   changeSelectedCoffeeType(int index){
